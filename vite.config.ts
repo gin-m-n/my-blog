@@ -1,9 +1,26 @@
 import { svelteTesting } from '@testing-library/svelte/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import { plugin as mdPlugin, Mode } from 'vite-plugin-markdown';
+import markdownit from 'markdown-it';
+import markdownitAnchor from 'markdown-it-anchor';
+
+const customMarkdownit = markdownit({
+	html: true,
+	linkify: true,
+	typographer: true
+}).use(markdownitAnchor, {
+	permalink: markdownitAnchor.permalink
+});
 
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [
+		sveltekit(),
+		mdPlugin({
+			mode: [Mode.TOC, Mode.HTML],
+			markdownIt: customMarkdownit
+		})
+	],
 	test: {
 		workspace: [
 			{

@@ -2,13 +2,15 @@ import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
-	console.log('debug');
-	if (params.slug === 'hello-world') {
+	try {
+		const { toc, html, attributes } = await import(`@articles/${params.slug}.md`);
+    console.log(toc);
 		return {
-			title: 'Hello world!',
-			content: '# Marked in the browser\n\nRendered by **marked**.'
+			attributes: attributes as Record<string, unknown>,
+			content: html as string,
+			toc: toc as { level: string; content: string }[]
 		};
+	} catch {
+		error(404, { message: 'Not Found' });
 	}
-
-	error(404, 'Not found');
 };

@@ -32,5 +32,10 @@ export default ts.config(
 				svelteConfig
 			}
 		}
+	},
+	{
+		rules: {
+			'svelte/no-at-html-tags': 'warn'
+		}
 	}
 );
