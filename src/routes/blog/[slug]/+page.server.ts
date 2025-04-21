@@ -8,7 +8,7 @@ const toc: { anchor: string; level: number; text: string }[] = [];
 const renderer = new Renderer();
 renderer.heading = function ({ tokens, depth }) {
 	const text = this.parser.parseInline(tokens);
-	const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+	const escapedText = text.toLowerCase().replace(/[\s]+/g, '-');
 
 	toc.push({
 		anchor: escapedText,
