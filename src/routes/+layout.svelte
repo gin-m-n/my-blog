@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HeaderMenu from '../components/HeaderMenu.svelte';
+	import HeaderMenu from '$lib/components/HeaderMenu.svelte';
 
 	let { children } = $props();
 </script>
