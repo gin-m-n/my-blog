@@ -1,6 +1,6 @@
 * {
 	margin: 0;
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 :root {
@@ -16,4 +16,8 @@ body {
 	font-family: 'M PLUS 2', sans-serif;
 	background: var(--bg-color);
 	color: var(--font-color);
+}
+
+body::-webkit-scrollbar {
+	display: none;
 }
