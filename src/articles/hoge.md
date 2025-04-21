@@ -19,6 +19,8 @@ var foo = function (bar) {
 console.log(foo(5));
 ```
 
+![チョッパー](/images/test.png)
+
 ## Tables
 
 | Option | Description |
