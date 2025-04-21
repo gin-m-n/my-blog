@@ -16,11 +16,11 @@ renderer.heading = function ({ tokens, depth }) {
 		text: text
 	});
 
-	return `  <h${depth}>
-              <a name="${escapedText}" class="anchor" href="#${escapedText}">
-                ${text}
-              </a>
-            </h${depth}>`;
+	return `<h${depth}>
+            <a name="${escapedText}" class="anchor" href="#${escapedText}">
+              ${text}
+            </a>
+          </h${depth}>`;
 };
 
 marked.use({
