@@ -12,5 +12,9 @@
 
 <style>
 	article :global {
+		.anchor {
+			text-decoration: none;
+			color: var(--font-color);
+		}
 	}
 </style>

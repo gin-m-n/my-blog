@@ -1,11 +1,19 @@
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-body,
-ul {
+* {
 	margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+	--bg-color: #1f2430;
+	--font-color: #fff;
+	--font-inactive-color: #666;
+	--header-menu-bg: #fff;
+	--header-menu-button-active-bg: #274364;
+	--header-menu-button-inactive-bg: #273142;
+}
+
+body {
+	font-family: 'M PLUS 2', sans-serif;
+	background: var(--bg-color);
+	color: var(--font-color);
 }
