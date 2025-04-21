@@ -3,7 +3,6 @@
 	import HeaderMenuButton from './HeaderMenuButton.svelte';
 
 	const { route }: { route: keyof typeof routes } = $props();
-	console.log(route);
 </script>
 
 <div class="container">
