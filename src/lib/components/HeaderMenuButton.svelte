@@ -2,11 +2,10 @@
 	import Anchor from './Anchor.svelte';
 
 	let { text, isActive, route }: { text: string; isActive: boolean; route: string } = $props();
-	const className = isActive ? 'active' : 'inactive';
 </script>
 
-<div class={['wrapper', className]}>
-	<Anchor href={route} color="#666">
+<div class={['wrapper', { active: isActive, inactive: !isActive }]}>
+	<Anchor href={route}>
 		{text}
 	</Anchor>
 </div>
@@ -23,6 +22,7 @@
 		background-color: var(--header-menu-button-active-bg);
 		height: 60px;
 	}
+
 	.inactive {
 		background-color: var(--header-menu-button-inactive-bg);
 		height: 44px;

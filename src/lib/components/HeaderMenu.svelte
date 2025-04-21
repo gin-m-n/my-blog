@@ -2,14 +2,14 @@
 	import { routes } from '$lib/routes';
 	import HeaderMenuButton from './HeaderMenuButton.svelte';
 
-	const { route }: { route: keyof typeof routes } = $props();
+	const { route }: { route: (typeof routes)[keyof typeof routes] } = $props();
 </script>
 
 <div class="container">
 	<div class="inner-container">
-		<HeaderMenuButton isActive={route === 'home'} text="Home" route={routes.home} />
-		<HeaderMenuButton isActive={route === 'blog'} text="Blog" route={routes.blog} />
-		<HeaderMenuButton isActive={route === 'aboutme'} text="About Me" route={routes.aboutme} />
+		<HeaderMenuButton isActive={route === routes.home} text="Home" route={routes.home} />
+		<HeaderMenuButton isActive={route === routes.blog} text="Blog" route={routes.blog} />
+		<HeaderMenuButton isActive={route === routes.aboutme} text="About Me" route={routes.aboutme} />
 	</div>
 </div>
 
