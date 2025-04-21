@@ -1,34 +1,30 @@
 <script lang="ts">
-	import Anchor from './Anchor.svelte';
-
 	let { text, isActive, route }: { text: string; isActive: boolean; route: string } = $props();
 </script>
 
-<div class={['wrapper', { active: isActive, inactive: !isActive }]}>
-	<Anchor href={route}>
-		{text}
-	</Anchor>
-</div>
+<a href={route} class={['link', { active: isActive, inactive: !isActive }]}>
+	{text}
+</a>
 
 <style>
-	.wrapper {
-		padding: 8px;
+	.link {
+    padding: 8px;
 		font-size: 20px;
 		font-weight: 500;
 		width: 156px;
+		display: inline-block;
+		text-decoration: none;
 	}
 
 	.active {
 		background-color: var(--header-menu-button-active-bg);
+		color: var(--font-color);
 		height: 60px;
 	}
 
 	.inactive {
 		background-color: var(--header-menu-button-inactive-bg);
+		color: var(--font-inactive-color);
 		height: 44px;
-
-		:global(a) {
-			color: var(--font-inactive-color);
-		}
 	}
 </style>
